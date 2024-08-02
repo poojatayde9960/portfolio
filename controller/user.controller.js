@@ -23,12 +23,12 @@ exports.getUsers = asyncHandler(async (req, res) => {
     res.json({ message: "User Fetch Success", result })
 })
 
-exports.contactUser = asyncHandler(async (req, res) => {
-    const { name, email, message } = req.body;
+// exports.contactUser = asyncHandler(async (req, res) => {
+//     const { name, email, message } = req.body;
 
-    try {
-        res.status(200).json({ message: "Contact information received", data: { name, email, message } });
-    } catch (error) {
-        res.status(500).json({ message: "error ", error: error.message });
-    }
-});
+//     try {
+//         res.status(200).json({ message: "Contact information received", data: { name, email, message } });
+//     } catch (error) {
+//         res.status(500).json({ message: "error ", error: error.message });
+//     }
+// });
