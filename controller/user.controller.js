@@ -7,8 +7,8 @@ exports.contact = asyncHandler(async (req, res) => {
         await User.create(req.body);
         await sendEmail({
             to: req.body.email,
-            subject: " SUCCESS",
-            message: "frhkkrfjdknclxhvefdbkjnlk"
+            subject: `WelCome ${req.body.name}, Thank you for reach.`,
+            message: "I will Contacting  you soon."
         });
 
         res.status(201).json({ message: "User email sent" });
