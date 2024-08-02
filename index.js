@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URL)
 const app = express()
 app.use(express.json())
 app.use(cors({
-    // origin: "http://localhost:5173",
+    origin: true,
     credentials: true
 }))  //kontyahi port no vrn data acess kraychga
 
@@ -17,10 +17,7 @@ app.use("*", (req, res) => {
     res.status(404).json({ message: "Resource Not Found" })
 })
 app.use((err, req, res, next) => {
-    res.status(500).json({ message: "Server Error" })
-})
-app.use((err, req, res, next) => {
-    console.log(err);
+    console.log(err)
     res.status(500).json({ message: "SERVER ERROR" })
 })
 
